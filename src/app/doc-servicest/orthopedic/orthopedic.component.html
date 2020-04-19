@@ -1,0 +1,145 @@
+<!-- Copy All -->
+
+<style>
+  .card {
+    border: 0px;
+  }
+.bgcard{background: #1fd1c894 !important;
+    color: #fff !important;}
+  .card-header {
+    background-color: transparent;
+  }
+
+  .bg-grey {
+    background-color: #f5f5f5;
+  }
+
+  .avatar {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    border-radius: 50%;
+    left: 34%;
+    top: -13%;
+  }
+
+  .hero-wrap.hero-wrap-2 .slider-text {
+    height: 580px;
+  }
+
+  .txt-up {
+    text-transform: capitalize;
+  }
+</style>
+<section class="hero-wrap hero-wrap-2 fadeInUp ftco-animated"
+  style="background-image: url('./../assets/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+  <div class="overlay "></div>
+  <div class="container ">
+    <div class="row  no-gutters slider-text align-items-end justify-content-start">
+      <div class="col-md-6 mr-5  pb-4" style="">
+       
+      
+          <div class="submit-form ">
+           <div *ngIf="!submitted">
+              <div class="avatar">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar">
+              </div>
+
+              <div class="row p-5 bg-light mt-10">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="inputAddress">Name</label>
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control" id="name" required [(ngModel)]="cust.name" name="name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress2">Mobile No</label>
+                    <div class="col-sm-12">
+                      <input type="text" class="form-control" id="phone" required [(ngModel)]="cust.phone" name="phone" placeholder="+978461230">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="inputAddress2">Service</label>
+                    <div class="col-sm-12">
+                      <select class="form-control" id="service" required [(ngModel)]="cust.service" name="service">
+                        <option value="Orthopedic">Orthopedic</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="sel1">City:</label>
+                    <div class="col-sm-12">
+                      <select class="form-control" id="city" required [(ngModel)]="cust.city" name="city">
+                        <option>Belgaum</option>
+                        <option>Bangalore</option>
+                        <option>Chandigarh</option>
+                        <option>Chennai</option>
+                        <option>Delhi</option>
+                        <option>Faridabad</option>
+                        <option>Ghaziabad</option>
+                        <option>Gurgaon</option>
+                        <option>Hyderabad</option>
+                        <option>Indore</option>
+                        <option>Jaipur</option>
+                        <option>Kolkata</option>
+                        <option>Mumbai</option>
+                        <option>Noida</option>
+                        <option>Pune</option>
+                        <option>Vijayawada</option>
+                        <option>Visakhapatnam</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+    
+                    <div class="col-sm-12">
+                      <button type="submit" class="btn btn-primary" (click)="saveCust()" >Sign in</button>
+                      <button type="reset" class="btn btn-warning float-right">Clear</button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+    
+                    <div class="col-sm-12">
+    
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>  
+             <!--   -->
+            <div class="card bg-secondary text-white bgcard" *ngIf="submitted">
+              <div class="card-body">
+                <h4>You submitted successfully!</h4>
+                <button class="btn btn-success" (click)="newCust()">Add</button>
+              </div>
+             
+            </div>
+
+
+          </div> 
+
+
+
+      </div>
+      <div class="col-md-4  pb-4">
+
+        <h1 class="mb-3 bread">Orthopedic Details</h1>
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                class="ion-ios-arrow-forward"></i></a></span> <span>Blog Single <i
+              class="ion-ios-arrow-forward"></i></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  -->
+
+
+<br><br><br><br>

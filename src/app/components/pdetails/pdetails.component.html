@@ -1,0 +1,68 @@
+<style>
+  .mt-20 {
+    margin-top: 16%;
+  }
+</style>
+<!--  -->
+
+
+<div class="container card bg-light text-dark p-5">
+  <div *ngIf="currentDetails " class="edit-form mt-20 ">
+    <h4>Details</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Title</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="currentDetails.name" name="name" />
+
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <!-- <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentTutorial.description"
+            name="description"
+          /> -->
+        <select class="form-control" id="service" [(ngModel)]="currentDetails.service" name="service">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+      <!--  -->
+      <div class="form-group">
+        <label for="phone">Title</label>
+        <input type="text" class="form-control" id="phone" [(ngModel)]="currentDetails.phone" name="phone" />
+
+      </div>
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentDetails.published ? "Published" : "Pending" }}
+      </div>
+    </form>
+
+    <button class="badge badge-primary mr-2" *ngIf="currentDetails.published" (click)="updatePublished(false)">
+      UnPublish
+    </button>
+    <button *ngIf="!currentDetails.published" class="badge badge-primary mr-2" (click)="updatePublished(true)">
+      Publish
+    </button>
+
+    <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
+      Delete
+    </button>
+
+    <button type="submit" class="badge badge-success" (click)="updateTutorial()">
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentDetails">
+    <br />
+    <p>Cannot access this Tutorial...</p>
+  </div>
+
+</div>
